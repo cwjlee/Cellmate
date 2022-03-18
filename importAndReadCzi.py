@@ -8,7 +8,7 @@ from czifile import czi2tif
 
 #Read .czi  convert to .tif and select colour channel
 image = czifile.imread('H99_48hrs-04.czi')
-czi2tif('H99_48hrs-04.czi')
+#czi2tif('H99_48hrs-04.czi')
 
 test = cv2.imread('H99_48hrs-04.czi.tif')
 cell_test = test[:,:,0]
@@ -36,4 +36,6 @@ dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 5)
 plt.imshow(dist_transform, cmap = 'gray')
 
 print(dist_transform.max())
+ret2, sure_fg = cv2.threshold(dist_transform, 0.5*dist_transform.max(), 255, 0)
+plt.imshow(sure_fg, cmap = 'gray')
 
