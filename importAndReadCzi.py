@@ -8,7 +8,7 @@ from czifile import czi2tif
 
 #Read .czi  convert to .tif and select colour channel
 image = czifile.imread('H99_48hrs-04.czi')
-#czi2tif('H99_48hrs-04.czi')
+czi2tif('H99_48hrs-05.czi')
 
 test = cv2.imread('H99_48hrs-04.czi.tif')
 cell_test = test[:,:,0]
