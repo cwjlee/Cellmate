@@ -6,7 +6,7 @@ from skimage import color
 from skimage import morphology
 from skimage import segmentation
 
-img = cv2.imread('./Images/CL1.czi.tif')
+img = cv2.imread('./Images/H99_48hrs-04.czi.tif')
 
 # Compute a mask
 lum = color.rgb2gray(img)
